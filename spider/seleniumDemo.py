@@ -13,9 +13,8 @@ if __name__ == "__main__":
     browser = webdriver.Chrome(chromePath)
     url = "https://www.bing.com/"
     browser.get(url)
-    inputEditer = browser.find_element_by_id("bgDiv")
-    inputEditer.send_keys("python selenum webdirver download")
-    time.sleep(1)
-    inputEditer.send_keys(Keys.RETURN)
+    bgImg = browser.find_element_by_id("bgDiv")
+    propertys = bgImg.get_property("style")
+    print propertys
     time.sleep(5)
     browser.close()
